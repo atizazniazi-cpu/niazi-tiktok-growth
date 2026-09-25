@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NIAZI〆TIKTOK Growth</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#050505;color:#fff;min-height:100vh}
+body:before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(circle at 15% 15%,#ff005522,transparent 30%),radial-gradient(circle at 85% 25%,#00ffff20,transparent 30%),radial-gradient(circle at 50% 90%,#8a00ff20,transparent 35%)}
+body:after{content:"";position:fixed;inset:-50%;z-index:-1;background:conic-gradient(from 0deg,transparent,#ff00550c,#00ffff0d,#a000ff0d,transparent);animation:spin 12s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}@keyframes rgb{0%{color:#ff0055}33%{color:#00ffff}66%{color:#00ff77}100%{color:#ff0055}}
+header{text-align:center;padding:26px 15px 8px}.logo{font-size:31px;font-weight:900;letter-spacing:2px;animation:rgb 3s linear infinite;text-shadow:0 0 16px currentColor}.sub{color:#999;font-size:13px;margin-top:7px}
+.hero{text-align:center;padding:30px 15px 20px}.hero h1{font-size:32px;margin:0 0 10px}.hero h1 span{animation:rgb 3s linear infinite}.hero p{max-width:650px;margin:auto;color:#aaa;line-height:1.6}
+.pay{margin:20px auto;padding:13px 18px;border:1px solid #00ffcc55;background:#00ffcc0b;border-radius:30px;width:max-content;color:#00ffcc;font-weight:800}
+.wrap{max-width:1050px;margin:auto;padding:10px 15px 45px}.title{text-align:center;margin:25px 0 16px;font-size:24px}.title span{animation:rgb 3s linear infinite}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:#111e;border:1px solid #292929;border-radius:18px;padding:22px 17px;text-align:center}.card h3{margin:0 0 8px}.qty{font-size:30px;font-weight:900;animation:rgb 3s linear infinite}.price{color:#aaa;margin:7px 0 16px}.order{border:0;width:100%;padding:13px;border-radius:11px;background:linear-gradient(90deg,#ff0055,#8b00ff,#00bfff);color:#fff;font-weight:900;cursor:pointer}
+.form{margin:25px auto 0;max-width:650px;background:#111;border:1px solid #292929;border-radius:18px;padding:20px}.form h2{margin-top:0}.form label{display:block;color:#aaa;margin:12px 0 6px;font-size:13px}.form input,.form select{width:100%;padding:13px;border-radius:10px;border:1px solid #333;background:#080808;color:#fff}.submit{margin-top:15px}.msg{margin-top:12px;padding:11px;border-radius:10px;display:none}.success{background:#00ff7715;border:1px solid #00ff7755;color:#80ffb0}.error{background:#ff005515;border:1px solid #ff005555;color:#ff9aaa}
+.info{max-width:650px;margin:15px auto;color:#999;line-height:1.6;font-size:13px}.info b{color:#fff}footer{text-align:center;border-top:1px solid #222;padding:25px;color:#777}.flogo{animation:rgb 3s linear infinite;font-weight:900}
+.modal{display:none;position:fixed;inset:0;background:#000c;backdrop-filter:blur(7px);z-index:10;align-items:center;justify-content:center;padding:18px}.box{max-width:400px;width:100%;background:#101010;border:1px solid #00ffff;border-radius:20px;padding:23px;text-align:center;box-shadow:0 0 30px #00ffff22}.box h2{animation:rgb 3s linear infinite}.number{font-size:27px;color:#00ffcc;font-weight:900;margin:15px 0}.btn{width:100%;border:0;border-radius:10px;padding:12px;margin-top:8px;font-weight:900;cursor:pointer}.copy{background:#282828;color:#fff}.wa{background:#25d366;color:#000}.close{background:#222;color:#aaa}.small{font-size:12px;color:#777;line-height:1.5}
+@media(max-width:750px){.grid{grid-template-columns:1fr}.hero h1{font-size:28px}.logo{font-size:27px}}
+</style>
+</head>
+<body>
+<header><div class="logo">NIAZI〆TIKTOK</div><div class="sub">TikTok Growth Services</div></header>
+<section class="hero">
+<h1>Grow Your <span>TikTok</span></h1>
+<p>Select a package, enter your TikTok link and place your order.</p>
+<div class="pay">💳 Easypaisa: 03220225993</div>
+</section>
+
+<section class="wrap">
+<div class="title">❤️ TikTok <span>Likes</span></div>
+<div class="grid" id="likes"></div>
+<div class="title">👤 TikTok <span>Followers</span></div>
+<div class="grid" id="followers"></div>
+
+<div class="form">
+<h2>🚀 Place Order</h2>
+<label>Service</label>
+<select id="type" onchange="renderPackages()"><option value="likes">TikTok Likes</option><option value="followers">TikTok Followers</option></select>
+<label>Package</label>
+<select id="package"></select>
+<label>TikTok Link</label>
+<input id="link" placeholder="https://www.tiktok.com/@username/video/..." autocomplete="off">
+<button class="order submit" onclick="placeOrder()">PLACE ORDER</button>
+<div id="msg" class="msg"></div>
+</div>
+
+<div class="info">
+<b>Payment:</b> Easypaisa <b>03220225993</b>.<br>
+Payment receipt save rakhein. This website does not automatically verify Easypaisa payments.
+Service availability and results depend on the selected provider service.
+</div>
+</section>
+
+<footer><div class="flogo">NIAZI〆TIKTOK</div>© 2026 NIAZI</footer>
+
+<div class="modal" id="modal" onclick="if(event.target===this)closeModal()">
+<div class="box">
+<h2>💳 Easypaisa</h2>
+<div id="modalText" class="small"></div>
+<div class="number">03220225993</div>
+<button class="btn copy" onclick="copyNumber()">📋 COPY NUMBER</button>
+<button class="btn wa" onclick="whatsapp()">💬 WHATSAPP ORDER</button>
+<button class="btn close" onclick="closeModal()">CLOSE</button>
+<div class="small" style="margin-top:12px">Payment ke baad screenshot aur TikTok link WhatsApp par bhej dein.</div>
+</div></div>
+
+<script>
+let config=null, lastOrder=null;
+async function load(){
+ const r=await fetch('/api/config'); config=await r.json();
+ renderCards();
+ renderPackages();
+}
+function renderCards(){
+ const make=(type)=>config.packages[type].map(p=>`<div class="card"><h3>${type==="likes"?"❤️":"👤"} ${type==="likes"?"Likes":"Followers"}</h3><div class="qty">${p.qty.toLocaleString()}</div><div class="price">Rs. ${p.price.toLocaleString()}</div><button class="order" onclick="selectPackage('${type}',${p.qty})">ORDER NOW</button></div>`).join('');
+ document.getElementById('likes').innerHTML=make('likes');
+ document.getElementById('followers').innerHTML=make('followers');
+}
+function renderPackages(){
+ const type=document.getElementById('type').value, s=document.getElementById('package');
+ s.innerHTML=config.packages[type].map(p=>`<option value="${p.qty}">${p.qty.toLocaleString()} — Rs. ${p.price.toLocaleString()}</option>`).join('');
+}
+function selectPackage(type,qty){
+ document.getElementById('type').value=type; renderPackages(); document.getElementById('package').value=qty;
+ document.querySelector('.form').scrollIntoView({behavior:'smooth'});
+}
+function showMsg(text,ok=false){const m=document.getElementById('msg');m.style.display='block';m.className='msg '+(ok?'success':'error');m.innerHTML=text}
+async function placeOrder(){
+ const type=document.getElementById('type').value, qty=Number(document.getElementById('package').value), link=document.getElementById('link').value.trim();
+ if(!link){showMsg('TikTok link enter karo.');return}
+ showMsg('Order process ho raha hai...',true);
+ try{
+  const r=await fetch('/api/order',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({type,packageQty:qty,link})});
+  const d=await r.json();
+  if(!d.ok) throw new Error(d.error||'Order failed');
+  lastOrder=d;
+  showMsg(`Order submitted. Provider Order ID: <b>${d.providerOrder.order||'N/A'}</b>`,true);
+  document.getElementById('modalText').innerHTML=`${d.package.qty.toLocaleString()} ${type==="likes"?"Likes":"Followers"} — Rs. ${d.package.price.toLocaleString()}<br>Provider Order ID: ${d.providerOrder.order||'N/A'}`;
+  document.getElementById('modal').style.display='flex';
+ }catch(e){showMsg(e.message)}
+}
+function copyNumber(){navigator.clipboard?.writeText('03220225993');alert('Easypaisa number copied: 03220225993')}
+function whatsapp(){
+ const text=lastOrder?`Assalam o Alaikum, NIAZI TikTok order.%0AProvider Order ID: ${lastOrder.providerOrder.order||''}%0APackage: ${lastOrder.package.qty} ${lastOrder.type||''}%0ATikTok Link: ${encodeURIComponent(document.getElementById('link').value)}`:'Assalam o Alaikum, mujhe TikTok Growth Service order karni hai.';
+ window.open('https://wa.me/923220225993?text='+text,'_blank');
+}
+function closeModal(){document.getElementById('modal').style.display='none'}
+load();
+</script>
+</body>
+</html>
